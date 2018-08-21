@@ -48,10 +48,8 @@ function router(nav) {
           const db = client.db(dbName);
 
           const col = await db.collection('books');
-
           const book = await col.findOne({ _id: new ObjectID(id) });
           debug(book);
-
           res.render('bookView',
             {
               title: 'Library',
