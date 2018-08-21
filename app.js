@@ -37,15 +37,17 @@ const nav = [
 ];
 
 const bookRouter = require('./src/routes/bookRoutes')(nav);
+const adminRouter = require('./src/routes/adminRoutes')(nav);
 
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 app.get('/', (req, res) => {
   // res.sendFile(path.join(__dirname, 'views', 'index.html'));
   res.render('index',
     {
       title: 'Library',
       nav: [{ link: '/books', title: 'Books' },
-      { link: '/authors', title: 'Authors' }]
+        { link: '/authors', title: 'Authors' }]
     });
 });
 
