@@ -74,7 +74,6 @@ function router(nav) {
         }
         client.close();
       }());
-      res.send('inserting books');
     });
   return adminRouter;
 }
