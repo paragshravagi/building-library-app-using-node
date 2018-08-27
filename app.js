@@ -11,17 +11,6 @@ const session = require('express-session');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const config = {
-  user: 'library',
-  password: 'pass@123',
-  server: 'nodejspslibrary.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
-  database: 'PSLibrary',
-
-  options: {
-    encrypt: true // Use this if you're on Windows Azure
-  }
-};
-
 app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
